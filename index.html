@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Riogame Command Center — metallic HUD gaming slot booking portal.">
+    <title>Riogame - Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Outer Metallic Frame -->
+    <div class="hud-frame">
+
+        <!-- TOP HEADER -->
+        <header class="top-header">
+            <div class="logo-box">
+                <span class="logo-icon">[R]</span> RIOGAME
+            </div>
+
+            <div class="center-lights">
+                <div class="light-panel">
+                    <div class="red-light active"></div>
+                    <div class="red-light active"></div>
+                    <div class="red-light"></div>
+                    <div class="red-light active"></div>
+                </div>
+                <div class="hazard-stripes"></div>
+            </div>
+
+            <div class="sys-status">
+                SYS: ONLINE <br> PING: <span id="pingValue">12ms</span>
+            </div>
+        </header>
+
+        <!-- MIDDLE SECTION (Sidebars + Main Content) -->
+        <div class="main-body">
+
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar left-bar">
+                <div class="panel-screws"></div>
+                <ul class="nav-links">
+                    <li class="active"><a href="#newsPanel">NEWS</a></li>
+                    <li><a href="#bookingPanel">BOOKINGS</a></li>
+                    <li><a href="#imageGrid">LAUNCH UNITS</a></li>
+                    <li><a href="#newsPanel">PRESS ARENA</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#imageGrid">GAMES</a></li>
+                    <li><a href="#activeUnits">SPOTLIGHTS</a></li>
+                    <li><a href="#rateCard">PLATFORM</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#footerStrip">SUPPORT</a></li>
+                    <li><a href="#footerStrip">CONTACT</a></li>
+                </ul>
+                <div class="side-red-indicator"></div>
+            </aside>
+
+            <!-- CENTER CONTENT AREA -->
+            <main class="content">
+
+                <!-- TITLE BANNER -->
+                <div class="title-banner">
+                    <h1>BOOKING ARENA</h1>
+                    <div class="tabs">
+                        <span class="tab active" data-tab="main">MAIN</span>
+                        <span class="tab" data-tab="slots">SLOTS</span>
+                        <span class="tab" data-tab="rates">RATES</span>
+                    </div>
+                </div>
+
+                <!-- CONTENT GRID -->
+                <div class="content-grid">
+
+                    <!-- Left Small Column -->
+                    <div class="col-small">
+                        <div class="news-card" id="newsPanel">
+                            <div class="card-header">SYS LOG</div>
+                            <div class="card-body">
+                                <img src="AC-Shadows-boxshot.jpg" alt="Assassin's Creed Shadows">
+                                <p>Assassin's Creed Shadows is now available for booking.</p>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="card-header">STATUS</div>
+                            <div class="card-body">
+                                <p class="red-text">WARNING: HIGH TRAFFIC</p>
+                                <p>Slots filling fast for Far Cry 6.</p>
+                                <img src="007-first-light-wins-game-of-the-year-at-the-tiga-awards-cover6aff278216e73.jpg" alt="007 First Light news">
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="card-header">LATEST INTEL</div>
+                            <div class="card-body">
+                                <img src="streamcharts-reports-nearly-8-million-concurrent-viewers-for-the-gta-vi-launch-cover6aff12b5026a1.jpg" alt="GTA VI viewership report">
+                                <p>8M+ viewers at the GTA VI launch.</p>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="card-header">STUDIO FEED</div>
+                            <div class="card-body">
+                                <img src="ubisoft-lays-off-166-employees-in-montreal-and-quebec-cover6aff15774335c.jpg" alt="Ubisoft studio update">
+                                <p>Studio restructuring announced.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Big Column -->
+                    <div class="col-large">
+
+                        <!-- Booking Form -->
+                        <div class="booking-panel" id="bookingPanel">
+                            <h2>RESERVE SLOT</h2>
+                            <form id="bookingForm" novalidate>
+                                <div class="input-row">
+                                    <label for="playerName">PLAYER NAME:</label>
+                                    <input type="text" id="playerName" placeholder="ENTER CALLSIGN" autocomplete="name">
+                                </div>
+                                <div class="input-row">
+                                    <label for="gameSelect">SELECT GAME:</label>
+                                    <select id="gameSelect">
+                                        <option value="">-- CHOOSE GAME --</option>
+                                        <option value="AC-Shadows" data-price="299">Assassin's Creed Shadows - ₹299</option>
+                                        <option value="AC-Origins" data-price="199">Assassin's Creed Origins - ₹199</option>
+                                        <option value="FarCry6" data-price="249">Far Cry 6 - ₹249</option>
+                                        <option value="Anno2205" data-price="149">Anno 2205 - ₹149</option>
+                                        <option value="Avatar" data-price="299">Avatar: Frontiers - ₹299</option>
+                                        <option value="Fenyx" data-price="179">Immortals Fenyx Rising - ₹179</option>
+                                        <option value="GhostRecon" data-price="199">Ghost Recon Wildlands - ₹199</option>
+                                        <option value="StarWars" data-price="279">Star Wars Outlaws - ₹279</option>
+                                        <option value="Division" data-price="199">The Division - ₹199</option>
+                                        <option value="007" data-price="249">007 First Light - ₹249</option>
+                                    </select>
+                                </div>
+                                <div class="input-row">
+                                    <label for="bookingDate">DATE:</label>
+                                    <input type="date" id="bookingDate">
+                                </div>
+                                <div class="input-row">
+                                    <label for="hours">HOURS:</label>
+                                    <input type="number" id="hours" min="1" max="10" value="1">
+                                </div>
+                                <div class="rate-display">
+                                    RATE: <span id="rateValue">0</span> CREDITS / HR
+                                    &nbsp; // &nbsp; TOTAL: <span id="totalValue">0</span> CR
+                                </div>
+                                <button type="submit" class="btn-confirm">CONFIRM BOOKING</button>
+                            </form>
+
+                            <div class="system-message" id="systemMessage" role="status" aria-live="assertive" hidden>
+                                <b id="msgTitle"></b><span id="msgBody"></span>
+                            </div>
+                        </div>
+
+                        <!-- Image Grid -->
+                        <div class="image-grid" id="imageGrid">
+                            <div class="img-card"><img src="far-cry-6.jpg" alt="Far Cry 6"></div>
+                            <div class="img-card"><img src="anno-2205.jpg" alt="Anno 2205"></div>
+                            <div class="img-card"><img src="gr-wildlands.jpg" alt="Ghost Recon Wildlands"></div>
+                            <div class="img-card"><img src="immortals-fenyx-rising.jpg" alt="Immortals Fenyx Rising"></div>
+                        </div>
+
+                        <!-- RATE CARD SECTION -->
+                        <div class="rate-card-panel" id="rateCard">
+                            <div class="card-header">GAME RATE CARD [CREDITS/HOUR]</div>
+                            <div class="rate-grid">
+                                <div class="rate-item" data-game="AC-Shadows"><img src="AC-Shadows-boxshot.jpg" alt="AC Shadows"><span>AC Shadows</span><span class="price">299 CR</span></div>
+                                <div class="rate-item" data-game="AC-Origins"><img src="ac-origins.jpg" alt="AC Origins"><span>AC Origins</span><span class="price">199 CR</span></div>
+                                <div class="rate-item" data-game="FarCry6"><img src="far-cry-6.jpg" alt="Far Cry 6"><span>Far Cry 6</span><span class="price">249 CR</span></div>
+                                <div class="rate-item" data-game="Anno2205"><img src="anno-2205.jpg" alt="Anno 2205"><span>Anno 2205</span><span class="price">149 CR</span></div>
+                                <div class="rate-item" data-game="Avatar"><img src="avatar2.svg" alt="Avatar"><span>Avatar: Frontiers</span><span class="price">299 CR</span></div>
+                                <div class="rate-item" data-game="Fenyx"><img src="immortals-fenyx-rising.jpg" alt="Fenyx"><span>Fenyx Rising</span><span class="price">179 CR</span></div>
+                                <div class="rate-item" data-game="GhostRecon"><img src="gr-wildlands.jpg" alt="Ghost Recon"><span>Ghost Recon</span><span class="price">199 CR</span></div>
+                                <div class="rate-item" data-game="StarWars"><img src="swo-boxshot.jpg" alt="Star Wars Outlaws"><span>Star Wars Outlaws</span><span class="price">279 CR</span></div>
+                                <div class="rate-item" data-game="Division"><img src="UBS_Boxart_341x450.jpg" alt="The Division"><span>The Division</span><span class="price">199 CR</span></div>
+                                <div class="rate-item" data-game="007"><img src="007-first-light-wins-game-of-the-year-at-the-tiga-awards-cover6aff278216e73.jpg" alt="007 First Light"><span>007 First Light</span><span class="price">249 CR</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- RIGHT SIDEBAR -->
+            <aside class="sidebar right-bar" id="activeUnits">
+                <div class="panel-screws"></div>
+                <div class="right-panel-title">ACTIVE UNITS</div>
+                <div class="right-content">
+                    <img src="highlight-card-universes-AC-optimized.webp" alt="Assassin's Creed unit">
+                    <img src="highlight-card-universes-FC-optimized.webp" alt="Far Cry unit">
+                    <img src="highlight-card-universes-Anno-optimized.webp" alt="Anno unit">
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- FOOTER STRIP -->
+        <footer class="footer-strip" id="footerStrip">
+            <span>RIOGAME // SECURE BOOKING NETWORK</span>
+            <span>SUPPORT: ops@riogame.local &nbsp;|&nbsp; CONTACT: +91-00000-00000</span>
+        </footer>
+    </div>
+
+    <!-- CONFIRMATION OVERLAY -->
+    <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" hidden>
+        <div class="modal-card">
+            <div class="modal-header">RIOGAME // SYSTEM RESPONSE</div>
+            <div class="modal-body">
+                <h2 id="confirmTitle">ACCESS GRANTED</h2>
+                <p>SLOT RESERVED. CLEARANCE CONFIRMED.</p>
+                <div class="receipt" id="receipt"></div>
+                <button type="button" class="btn-confirm" id="closeModal">CLOSE TRANSMISSION</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
